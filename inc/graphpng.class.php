@@ -640,7 +640,7 @@ class PluginMreportingGraphpng extends PluginMreportingGraph {
                   $by1 + 14,
                   hexdec($darkerpalette[$index]),
                   $this->font,
-                  Html::clean($data.$unit)
+                  Toolbox::stripTags($data.$unit)
                );
             }
             //create axis label (align right)
@@ -655,7 +655,7 @@ class PluginMreportingGraphpng extends PluginMreportingGraph {
                $by1 + 14,
                hexdec($this->black),
                $this->font,
-               Html::clean($labels[$index])
+               Toolbox::stripTags($labels[$index])
             );
 
             $index++;
@@ -840,7 +840,7 @@ class PluginMreportingGraphpng extends PluginMreportingGraph {
                      $ytext,
                      hexdec($darkerpalette[$index]),
                      $this->font,
-                     Html::clean($data.$unit)
+                     Toolbox::stripTags($data.$unit)
                   );
                }
 
@@ -1344,7 +1344,7 @@ class PluginMreportingGraphpng extends PluginMreportingGraph {
                $ly + 14,
                hexdec($this->black),
                $this->font,
-               Html::clean($labels[$index1])
+               Toolbox::stripTags($labels[$index1])
             );
 
             foreach ($data as $subdata) {
@@ -1397,7 +1397,7 @@ class PluginMreportingGraphpng extends PluginMreportingGraph {
                10 + $index * 15,
                hexdec($this->black),
                $this->font,
-               Html::clean($label)
+               Toolbox::stripTags($label)
             );
 
             //legend circle
@@ -1676,7 +1676,7 @@ class PluginMreportingGraphpng extends PluginMreportingGraph {
                $height - $x_labels_height + 9,
                hexdec($this->black),
                $this->font,
-               Html::clean($labels2[$label])
+               Toolbox::stripTags($labels2[$label])
             );
 
             $index1++;
@@ -1700,7 +1700,7 @@ class PluginMreportingGraphpng extends PluginMreportingGraph {
                $y_legend,
                hexdec($this->black),
                $this->font,
-               Html::clean($labels[$index])
+               Toolbox::stripTags($labels[$index])
             );
 
             //legend circle

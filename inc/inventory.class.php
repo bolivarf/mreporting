@@ -418,7 +418,7 @@ class PluginMreportingInventory Extends PluginMreportingBaseclass {
       foreach ($list_windows as $windows) {
          $oses = [];
          $ositerator = $DB->request('glpi_operatingsystems', ['name' => ['LIKE', "%$windows%"]]);
-         while ($os = $ositerator->next()) {
+         foreach ($ositerator as $os) {
             $oses[] = $os['id'];
          }
          if (!empty($oses)) {
@@ -497,7 +497,7 @@ class PluginMreportingInventory Extends PluginMreportingBaseclass {
             ]
          );
 
-         while ($version = $iterator->next()) {
+         foreach ($iterator as $version) {
             if ($version['name'] != '' && $version['cpt']) {
                $data['datas'][$os['name']. " ".$version['name']] = $version['cpt'];
             }
@@ -556,7 +556,7 @@ class PluginMreportingInventory Extends PluginMreportingBaseclass {
 
       $data = [];
       $ositerator = $DB->request('glpi_operatingsystems', ['name' => ['LIKE', '%Mac OS%']]);
-      while ($os = $ositerator->next()) {
+      foreach ($ositerator as $os) {
          $iterator = $DB->request(
             'glpi_computers', [
                'SELECT' => [
@@ -591,7 +591,7 @@ class PluginMreportingInventory Extends PluginMreportingBaseclass {
             ]
          );
 
-         while ($version = $iterator->next()) {
+         foreach ($iterator as $version) {
             if ($version['name'] != '' && $version['cpt']) {
                $data['datas'][$os['name']. " ".$version['name']] = $version['cpt'];
             }
@@ -609,7 +609,7 @@ class PluginMreportingInventory Extends PluginMreportingBaseclass {
 
       $data = [];
       $ositerator = $DB->request('glpi_operatingsystems', ['name' => ['LIKE', '%Mac OS%']]);
-      while ($os = $ositerator->next()) {
+      foreach ($ositerator as $os) {
          $iterator = $DB->request(
             'glpi_computers', [
                'SELECT' => [
@@ -644,7 +644,7 @@ class PluginMreportingInventory Extends PluginMreportingBaseclass {
             ]
          );
 
-         while ($version = $iterator->next()) {
+         foreach ($iterator as $version) {
             if ($version['name'] != '' && $version['cpt']) {
                if (preg_match("/(10.[0-9]+)/", $version['name'], $results)) {
                   if (!isset($data['datas'][$os['name']. " ".$results[1]])) {
