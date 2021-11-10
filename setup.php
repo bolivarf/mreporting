@@ -31,9 +31,9 @@
 define ('PLUGIN_MREPORTING_VERSION', '1.7.3');
 
 // Minimal GLPI version, inclusive
-define("PLUGIN_MREPORTING_MIN_GLPI", "9.5");
+define("PLUGIN_MREPORTING_MIN_GLPI", "10.0.0");
 // Maximum GLPI version, exclusive
-define("PLUGIN_MREPORTING_MAX_GLPI", "9.6");
+define("PLUGIN_MREPORTING_MAX_GLPI", "10.0.99");
 
 if (!defined('PLUGIN_MREPORTING_DIR')) {
    define("PLUGIN_MREPORTING_DIR", __DIR__ );
